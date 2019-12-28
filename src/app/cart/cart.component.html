@@ -1,0 +1,62 @@
+<!-- Cart Page -->
+<div class="cart-page pt55 h100 ">
+  <div class="cart-container">
+    <div class="row ml0 mr0 p30 mt20">
+      <input type="text" placeholder="Search..">
+    </div>
+    <div class="row ml0 mr0">
+      <!-- Filter Section -->
+      <div class="col-sm-2 filter-section p0">
+        <p class="p15 border-bottom-color filter-header mb0">FILTERS</p>
+        <div class="p15 card" id="accordion">
+          <section>
+            <p class="filter-section-title mb0" data-toggle="collapse"  href="#collapseOne">CATEGORIES <i class="fa fa-angle-down float-right" data-toggle="collapse"  href="#collapseOne"></i></p>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+              <div class="card-body p15">
+                <p class="card-body-submenu mb10 pointer" (click)="filterCategory('men')">Men's Clothing</p>
+                <p class="card-body-submenu mb10 pointer" (click)="filterCategory('women')">Women's Clothing</p>
+                <p class="card-body-submenu mb10 pointer" (click)="filterCategory('kid')">Kid's Clothing</p>
+              </div>
+            </div>
+          </section>
+         
+
+          <section>
+            <p class="filter-section-title mb0" data-toggle="collapse"  href="#collapseTwo">PRICE <i class="fa fa-angle-down float-right" data-toggle="collapse"  href="#collapseTwo"></i></p>
+            <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+              <div class="card-body p15">
+                <input type="checkbox" name="price1" value="Rs. 499 and below" class="mb10 pointer" (click)="selectPrice(499)"><span class="card-body-submenu"> Rs. 499 and below</span><br>
+                <input type="checkbox" name="price2" value="Rs. 500 - Rs. 999" class="mb10 pointer" (click)="selectPrice(500)"><span class="card-body-submenu"> Rs. 500 - Rs. 999</span> <br>
+                <input type="checkbox" name="price3" value="Rs. 1000 - Rs. 1499" class="mb10 pointer"><span class="card-body-submenu"> Rs. 1000 - Rs. 1499</span><br>
+                <input type="checkbox" name="price4" value="1499 - Rs. 2000" class="mb10 pointer"><span class="card-body-submenu"> Rs. 1499 - Rs. 2000</span><br>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p class="filter-section-title mb0" data-toggle="collapse"  href="#collapseThree">COLOR <i class="fa fa-angle-down float-right" data-toggle="collapse"  href="#collapseThree"></i></p>
+            <div id="collapseThree" class="collapse show" data-parent="#accordion">
+              <div class="card-body p15">
+                <input type="checkbox" name="color1" value="Red" class="mb10 pointer" (change)="selectColor('Red', $event)"><span class="card-body-submenu"> Red</span><br>
+                <input type="checkbox" name="color2" value="Blue" class="mb10 pointer" (change)="selectColor('Blue', $event)"><span class="card-body-submenu"> Blue</span>
+              </div>
+            </div>
+          </section>   
+        </div>      
+      </div>
+
+      <!-- Cart Section -->
+      <div class="col-sm-10 cart-section">
+        <div class="cart text-center m20 inline-block" *ngFor="let cartdetail of cartDetail">
+          <img [src]="cartdetail.image.src" alt="full-sleeve-red-men-jacket" class="cart-image">
+          <h5 class="mtb5">{{cartdetail.name}}</h5>
+          <div class="row ml0 mr0">
+            <p class="cart-price text-left col-sm-6 mb0">Rs {{cartdetail.price}}</p>
+            <p class="cart-description mb0 text-right col-sm-6">{{cartdetail.color}}</p>
+          </div>       
+          <button type="button" class="btn w100 cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

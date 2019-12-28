@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+$full-height: 100%;
+$full-width: 100%;
+
+// Color variable
+$white-color: #ffffff;
+$black-color: #000000;
+$turquoise-color: #33cccc;
+$error-msg-color: #ff1a1a;
+$salmon-pink-color: #ff9999;
+$bisque-color: #ffddb3;
+$cyan-color: #ccffff;
+$cosmos-color: #ffcccc;
+$light-shade-blue: #edf8f8;
+
+.salmon-pink-color{color: $salmon-pink-color;}
+
+// Padding variable
+.p0{padding: 0;}
+.p15{padding: 15px;}
+.p30{padding: 30px;}
+.pt55{padding-top: 55px;}
+
+// Margin variable
+.mb0{margin-bottom: 0;}
+.mr0{margin-right: 0;}
+.ml0{margin-left: 0;}
+.mb20{margin-bottom: 20px;}
+.mb10{margin-bottom: 10px;}
+.mt20{margin-top: 20px;}
+.mtb20{margin: 20px 0;}
+.mtb5{margin: 5px 0;}
+.m20{margin: 20px;}
+
+//Font variable
+.bold{font-weight: bold;}
+$font-xxs: 10px;
+$font-xs: 12px;
+$font-small: 15px;
+$font-medium: 20px;
+$font-large: 25px;
+$font-xl: 30px;
+
+.w100{ width: $full-width; }
+.h100{height: $full-height;}
+.inline-block{display: inline-block;}
+
+body, html{ height: $full-height; font-family: 'Roboto', sans-serif; }
+.error-msg { color: $error-msg-color; font-size: $font-xs; }
+.border-bottom-color{border-bottom: 1px solid #f0f0f0;}
+.pointer{cursor: pointer;}
+
+/***button***/
+.btn { padding: 6px 12px; line-height: 20px; background-color: $salmon-pink-color; color: $white-color; border: none; border-radius: 3px; outline: none; 
+    &:hover{ color: $white-color;}
+    &:focus{ box-shadow: none;}
+}
+
+// Header
+.main-header{ background-color: $turquoise-color; color: $white-color; padding: 10px 60px; position: fixed; top: 0; z-index: 100;
+    .fa-shopping-cart{font-size: $font-xl;}
+}
+
+// User Page
+.user-login-box{margin: auto; width: 450px;}
+.user-label{font-size: $font-small;}
+.user-form{background-color: $bisque-color; border-radius: 7px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.user-page{background: linear-gradient(to left, $cyan-color 0%, $cosmos-color 100%);}
+
+// Cart page
+.cart-page{background-color: $light-shade-blue;}
+.cart-container{min-width: 1200px; max-width: 1465px; margin: auto; background-color: $white-color;}
+.filter-section, .cart-section{box-shadow: 0 1px 8px 0 rgba(0,0,0,.06); }
+.filter-header{font-size: $font-medium;}
+.filter-section-title{font-size: $font-small;}
+.card-body-submenu{font-size: $font-small;}
+.cart{ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); width: 250px; height: 300px; position: relative;
+    .cart-image{ height: 210px;}
+    .cart-btn{position: absolute; bottom: 0; left: 0; right: 0;}
+    .cart-description, .cart-price{font-size: $font-small;}
+}
+
+.card{border: none;}
