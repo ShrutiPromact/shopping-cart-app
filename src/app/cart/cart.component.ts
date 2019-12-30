@@ -10,6 +10,8 @@ import { cartModel } from './cart.model.js';
 export class CartComponent implements OnInit {
   cartDetail: cartModel[];
   duplicateCartDetail: cartModel[];
+  colorFilter = { Red: false, Blue: false };
+  priceFilter = { 499: false, 999: false, 1499: false, 2000: false };
 
   constructor() { 
     this.cartDetail = [];
@@ -32,20 +34,34 @@ export class CartComponent implements OnInit {
    * Method for select Price
    */
   selectPrice(price: number){
-    if(price < 500){
-      this.cartDetail = this.cartDetail.filter(x => x.price <= price); 
-    }     
-       if(price >= 500){
+    this.cartDetail = this.duplicateCartDetail;
+      if(price < 500){
+        this.cartDetail = this.cartDetail.filter(x => x.price <= price); 
+      }     
+      else if(price >= 500 && price< 999){
         this.cartDetail = this.cartDetail.filter(x => x.price >= price); 
-       }
+      }
+      else if(price >= 1000 && price< 1500){
+        this.cartDetail = this.cartDetail.filter(x => x.price >= price); 
+      }
+      else if(price >= 1500 && price< 2000){
+        this.cartDetail = this.cartDetail.filter(x => x.price >= price); 
+      }
   }
 
   /** 
    * Method for select Color
    */
-  selectColor(color: string, isChecked){
-    if(isChecked.checked){
-      this.cartDetail = this.cartDetail.filter(y => y.color === color);
-    }
+  selectColor(){
+    this.cartDetail = this.duplicateCartDetail;
+    if(this.colorFilter.Red||this.colorFilter.Blue){
+      this.cartDetail = this.cartDetail.filter(x => (x.color === 'Red' && this.colorFilter.Red) || (x.color === 'Blue' && this.colorFilter.Blue));
+    }    
+  }
+
+  /** 
+   * Method for add to cart button
+   */
+  addCartItem(){
   }
 }

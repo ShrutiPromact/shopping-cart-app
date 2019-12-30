@@ -37,8 +37,10 @@
             <p class="filter-section-title mb0" data-toggle="collapse"  href="#collapseThree">COLOR <i class="fa fa-angle-down float-right" data-toggle="collapse"  href="#collapseThree"></i></p>
             <div id="collapseThree" class="collapse show" data-parent="#accordion">
               <div class="card-body p15">
-                <input type="checkbox" name="color1" value="Red" class="mb10 pointer" (change)="selectColor('Red', $event)"><span class="card-body-submenu"> Red</span><br>
-                <input type="checkbox" name="color2" value="Blue" class="mb10 pointer" (change)="selectColor('Blue', $event)"><span class="card-body-submenu"> Blue</span>
+                <input type="checkbox" name="color1" value="Red" class="mb10 pointer" [(ngModel)]="colorFilter.Red" (change)="selectColor()"><span class="card-body-submenu"> Red</span><br>
+                <input type="checkbox" name="color2" value="Blue" class="mb10 pointer" [(ngModel)]="colorFilter.Blue" (change)="selectColor()"><span class="card-body-submenu"> Blue</span>
+                <!-- <input type="radio" name="color" value="Red" class="mb10 pointer" (change)="selectColor('Red',$event)"><span class="card-body-submenu"> Red</span><br>
+                <input type="radio" name="color" value="Blue" class="mb10 pointer" (change)="selectColor('Blue',$event)"><span class="card-body-submenu"> Blue</span> -->
               </div>
             </div>
           </section>   
@@ -54,7 +56,7 @@
             <p class="cart-price text-left col-sm-6 mb0">Rs {{cartdetail.price}}</p>
             <p class="cart-description mb0 text-right col-sm-6">{{cartdetail.color}}</p>
           </div>       
-          <button type="button" class="btn w100 cart-btn">Add to Cart</button>
+          <button type="button" class="btn w100 cart-btn" (click)="addCartItem()">Add to Cart</button>
         </div>
       </div>
     </div>

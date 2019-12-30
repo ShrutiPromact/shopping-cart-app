@@ -12,6 +12,7 @@ $bisque-color: #ffddb3;
 $cyan-color: #ccffff;
 $cosmos-color: #ffcccc;
 $light-shade-blue: #edf8f8;
+$ruby-color: #e91e63;
 
 .salmon-pink-color{color: $salmon-pink-color;}
 
@@ -79,5 +80,6 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; }
     .cart-btn{position: absolute; bottom: 0; left: 0; right: 0;}
     .cart-description, .cart-price{font-size: $font-small;}
 }
+.item-cart{ width: 30px; line-height: 30px; font-size: $font-xs; background-color: $ruby-color; border-radius: 50%; position: absolute; top: -3px; right: -16px; }
 
 .card{border: none;}

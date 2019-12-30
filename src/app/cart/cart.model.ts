@@ -1,5 +1,4 @@
 export class cartModel{
-    //image: string;
     image: {
         src: string
       };
