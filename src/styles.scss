@@ -46,7 +46,7 @@ $font-xl: 30px;
 .h100{height: $full-height;}
 .inline-block{display: inline-block;}
 
-body, html{ height: $full-height; font-family: 'Roboto', sans-serif; }
+body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-color: #edf8f8; }
 .error-msg { color: $error-msg-color; font-size: $font-xs; }
 .border-bottom-color{border-bottom: 1px solid #f0f0f0;}
 .pointer{cursor: pointer;}
@@ -58,9 +58,7 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; }
 }
 
 // Header
-.main-header{ background-color: $turquoise-color; color: $white-color; padding: 10px 60px; position: fixed; top: 0; z-index: 100;
-    .fa-shopping-cart{font-size: $font-xl;}
-}
+.main-header{ background-color: $turquoise-color; color: $white-color; padding: 10px 60px; position: fixed; top: 0; z-index: 100;}
 
 // User Page
 .user-login-box{margin: auto; width: 450px;}
@@ -80,6 +78,6 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; }
     .cart-btn{position: absolute; bottom: 0; left: 0; right: 0;}
     .cart-description, .cart-price{font-size: $font-small;}
 }
-.item-cart{ width: 30px; line-height: 30px; font-size: $font-xs; background-color: $ruby-color; border-radius: 50%; position: absolute; top: -3px; right: -16px; }
-
+.item-cart{ width: 30px; line-height: 30px; font-size: $font-xs; background-color: $ruby-color; border-radius: 50%; position: absolute; top: -6px; right: -13px; color: $white-color; }
+.fa-shopping-cart{color: $turquoise-color; font-size: $font-xl;}
 .card{border: none;}

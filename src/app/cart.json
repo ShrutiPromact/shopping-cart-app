@@ -2,7 +2,7 @@
     "image": {
       "src": "../assets/Images/full-sleeve-red-men-jacket.jpeg"
     },
-    "name": "Apple",
+    "name": "COBB",
     "price": 599,
     "color":"Red",
     "category": "men"
@@ -10,23 +10,23 @@
     "image": {
       "src": "../assets/Images/kid-red-frock.jpeg"
     },
-    "name": "Orange",
-    "price": 700,
+    "name": "ORANGE",
+    "price": 430,
     "color":"Red",
     "category": "kid"
   }, {
     "image": {
       "src": "../assets/Images/kid-red-jacket.jpeg"
     },
-    "name": "kid-red-frock",
-    "price": 1100,
+    "name": "ORANGE",
+    "price": 500,
     "color":"Red",
     "category": "kid"
   },{
     "image": {
       "src": "../assets/Images/kid-red-lehenga.jpeg"
     },
-    "name": "Orange",
+    "name": "ORANGE",
     "price": 400,
     "color":"Red",
     "category": "kid"
@@ -34,31 +34,31 @@
     "image": {
       "src": "../assets/Images/men-hooded-neck-red-t-shirt.jpeg"
     },
-    "name": "Orange",
-    "price": 700,
+    "name": "COBB",
+    "price": 800,
     "color":"Red",
     "category": "men"
   },{
     "image": {
       "src": "../assets/Images/men-red-jacket.jpeg"
     },
-    "name": "Orange",
-    "price": 1700,
+    "name": "COBB",
+    "price": 700,
     "color":"Red",
     "category": "men"
   },{
     "image": {
       "src": "../assets/Images/men-red-shirt.jpeg"
     },
-    "name": "Orange",
-    "price": 1600,
+    "name": "COBB",
+    "price": 700,
     "color":"Red",
     "category": "men"
   },{
     "image": {
       "src": "../assets/Images/men-round-neck-red-t-shirt.jpeg"
     },
-    "name": "Orange",
+    "name": "COBB",
     "price": 1200,
     "color":"Red",
     "category": "men"
@@ -66,23 +66,23 @@
     "image": {
       "src": "../assets/Images/red-half-sleeve-kurti.jpeg"
     },
-    "name": "Orange",
-    "price": 400,
+    "name": "AARA",
+    "price": 360,
     "color":"Red",
     "category": "women"
   },{
     "image": {
       "src": "../assets/Images/red-kurti.jpeg"
     },
-    "name": "Orange",
-    "price": 900,
+    "name": "AASK",
+    "price": 1200,
     "color":"Red",
     "category": "women"
   },{
     "image": {
       "src": "../assets/Images/women-red-anarkali-kurti.jpeg"
     },
-    "name": "Orange",
+    "name": "AAYNA",
     "price": 800,
     "color":"Red",
     "category": "women"
@@ -90,8 +90,8 @@
     "image": {
       "src": "../assets/Images/red-women-full-sleeve-kurti.jpeg"
     },
-    "name": "Orange",
-    "price": 760,
+    "name": "BIBA",
+    "price": 1660,
     "color":"Red",
     "category": "women"
   }
@@ -99,56 +99,56 @@
     "image": {
       "src": "../assets/Images/women-blue-kurti.jpeg"
     },
-    "name": "Orange",
-    "price": 760,
+    "name": "BRONZ",
+    "price": 2000,
     "color":"Blue",
     "category": "women"
   },{
     "image": {
       "src": "../assets/Images/men-blue-t-shirt.jpeg"
     },
-    "name": "Orange",
-    "price": 760,
+    "name": "ADMIRAL",
+    "price": 540,
     "color":"Blue",
     "category": "men"
   },{   
     "image": {
       "src": "../assets/Images/women-round-neck-blue-kurti.jpeg"
     },
-    "name": "Orange",
-    "price": 760,
+    "name": "BIBA",
+    "price": 930,
     "color":"Blue",
     "category": "women"
   },{   
     "image": {
       "src": "../assets/Images/men-blue-round-neck-t-shirt.jpeg"
     },
-    "name": "Orange",
-    "price": 760,
+    "name": "ADOBE",
+    "price": 2000,
     "color":"Blue",
     "category": "men"
   },{   
     "image": {
       "src": "../assets/Images/men-blue-full-sleeve-t-shirt.jpeg"
     },
-    "name": "Orange",
-    "price": 760,
+    "name": "CAMEY",
+    "price": 460,
     "color":"Blue",
     "category": "men"
   },{   
     "image": {
       "src": "../assets/Images/kid-blue-sweatshirt.jpeg"
     },
-    "name": "Orange",
-    "price": 760,
+    "name": "ORANGE",
+    "price": 660,
     "color":"Blue",
     "category": "kid"
   },{   
     "image": {
       "src": "../assets/Images/kid-blue-frock.jpeg"
     },
-    "name": "Orange",
-    "price": 760,
+    "name": "ORANGE",
+    "price": 1760,
     "color":"Blue",
     "category": "kid"
   }

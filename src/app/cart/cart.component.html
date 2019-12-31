@@ -1,9 +1,16 @@
 <!-- Cart Page -->
-<div class="cart-page pt55 h100 ">
+<div class="cart-page pt55">
   <div class="cart-container">
     <div class="row ml0 mr0 p30 mt20">
-      <input type="text" placeholder="Search..">
+      <div class="col-sm-6">
+        <input type="text" placeholder="Search by product name" class="form-control" (keyup)="filterByLetter($event)">
+      </div>   
+      <div class="col-sm-6 text-right">
+        <i class="fa fa-shopping-cart" (click)="navigateToCheckoutPage()"></i>
+        <label class="text-center mb0 item-cart">{{itemCount}}</label>
+      </div>    
     </div>
+
     <div class="row ml0 mr0">
       <!-- Filter Section -->
       <div class="col-sm-2 filter-section p0">
@@ -25,10 +32,14 @@
             <p class="filter-section-title mb0" data-toggle="collapse"  href="#collapseTwo">PRICE <i class="fa fa-angle-down float-right" data-toggle="collapse"  href="#collapseTwo"></i></p>
             <div id="collapseTwo" class="collapse show" data-parent="#accordion">
               <div class="card-body p15">
-                <input type="checkbox" name="price1" value="Rs. 499 and below" class="mb10 pointer" (click)="selectPrice(499)"><span class="card-body-submenu"> Rs. 499 and below</span><br>
+                <!-- <input type="checkbox" name="price1" value="Rs. 499 and below" class="mb10 pointer" (click)="selectPrice(499)"><span class="card-body-submenu"> Rs. 499 and below</span><br>
                 <input type="checkbox" name="price2" value="Rs. 500 - Rs. 999" class="mb10 pointer" (click)="selectPrice(500)"><span class="card-body-submenu"> Rs. 500 - Rs. 999</span> <br>
                 <input type="checkbox" name="price3" value="Rs. 1000 - Rs. 1499" class="mb10 pointer"><span class="card-body-submenu"> Rs. 1000 - Rs. 1499</span><br>
-                <input type="checkbox" name="price4" value="1499 - Rs. 2000" class="mb10 pointer"><span class="card-body-submenu"> Rs. 1499 - Rs. 2000</span><br>
+                <input type="checkbox" name="price4" value="1499 - Rs. 2000" class="mb10 pointer"><span class="card-body-submenu"> Rs. 1499 - Rs. 2000</span><br> -->
+                <input type="radio" name="price" class="mb10 pointer" (change)="selectPrice(499)"><span class="card-body-submenu"> Rs. 499 and below</span><br>
+                <input type="radio" name="price" class="mb10 pointer" (change)="selectPrice(999)"><span class="card-body-submenu"> Rs. 999 and below</span><br>
+                <input type="radio" name="price" class="mb10 pointer" (change)="selectPrice(1499)"><span class="card-body-submenu"> Rs. 1499 and below</span><br>
+                <input type="radio" name="price" class="mb10 pointer" (change)="selectPrice(2000)"><span class="card-body-submenu"> Rs. 2000 and below</span>
               </div>
             </div>
           </section>
@@ -39,8 +50,6 @@
               <div class="card-body p15">
                 <input type="checkbox" name="color1" value="Red" class="mb10 pointer" [(ngModel)]="colorFilter.Red" (change)="selectColor()"><span class="card-body-submenu"> Red</span><br>
                 <input type="checkbox" name="color2" value="Blue" class="mb10 pointer" [(ngModel)]="colorFilter.Blue" (change)="selectColor()"><span class="card-body-submenu"> Blue</span>
-                <!-- <input type="radio" name="color" value="Red" class="mb10 pointer" (change)="selectColor('Red',$event)"><span class="card-body-submenu"> Red</span><br>
-                <input type="radio" name="color" value="Blue" class="mb10 pointer" (change)="selectColor('Blue',$event)"><span class="card-body-submenu"> Blue</span> -->
               </div>
             </div>
           </section>   
@@ -48,7 +57,7 @@
       </div>
 
       <!-- Cart Section -->
-      <div class="col-sm-10 cart-section">
+      <div class="col-sm-10 cart-section" *ngIf="cartDetail.length>0">
         <div class="cart text-center m20 inline-block" *ngFor="let cartdetail of cartDetail">
           <img [src]="cartdetail.image.src" alt="full-sleeve-red-men-jacket" class="cart-image">
           <h5 class="mtb5">{{cartdetail.name}}</h5>
@@ -56,8 +65,11 @@
             <p class="cart-price text-left col-sm-6 mb0">Rs {{cartdetail.price}}</p>
             <p class="cart-description mb0 text-right col-sm-6">{{cartdetail.color}}</p>
           </div>       
-          <button type="button" class="btn w100 cart-btn" (click)="addCartItem()">Add to Cart</button>
+          <button type="button" class="btn w100 cart-btn" (click)="addCartItem(cartdetail)">Add to Cart</button>
         </div>
+      </div>
+      <div *ngIf="cartDetail.length==0">
+<p>There is no item to display</p>
       </div>
     </div>
   </div>
