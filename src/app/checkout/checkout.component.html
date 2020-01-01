@@ -1,52 +1,47 @@
 <div class="checkout-page pt55 h100">
   <div class="checkout-container h100 container">
     
-    <div class="checkout-user-detail p15">
-      <h4 class="text-center">User Detail</h4>     
-      <div class="row mr0 ml0">
-        <div class="col-sm-6">
-          <div>
-            <label class="checkout-user-label">Name(Username):</label>
-            <label class="checkout-user-label ml10">{{userDetail.userName}}</label>  
-          </div>
-         
-          <div>
-            <label class="checkout-user-label">Email:</label>
-            <label class="checkout-user-label ml10">{{userDetail.email}}</label>
-          </div>
-          
-          <div>
-            <label class="checkout-user-label">Mobile Number:</label>
-            <label class="checkout-user-label ml10">{{userDetail.mobileNumber}}</label>
-          </div>
-          
-          <div>
-            <label class="checkout-user-label">Address:</label>
-            <label class="checkout-user-label ml10">{{userDetail.address}}</label>
-          </div>        
-        </div>
-
-        <div class="col-sm-6">
-          <div>
-            <label class="checkout-user-label">Pin code:</label>
-            <label class="checkout-user-label ml10">{{userDetail.pincode}}</label>
-          </div>
-          
-          <div>
-            <label class="checkout-user-label">City:</label>
-            <label class="checkout-user-label ml10">{{userDetail.city}}</label>
-          </div>
-         
-          <div>
-            <label class="checkout-user-label">State:</label>
-            <label class="checkout-user-label ml10">{{userDetail.state}}</label>
-          </div>        
-        </div>
+    <div class="checkout-user-detail p15 text-center">
+      <h4 class="text-center mb20 checkout-detail-title p15">User Detail</h4>  
+      
+      <div>
+        <label class="checkout-user-label">Name(Username):</label>
+        <label class="checkout-user-label ml10">{{userDetail.userName}}</label>  
       </div>
+     
+      <div>
+        <label class="checkout-user-label">Email:</label>
+        <label class="checkout-user-label ml10">{{userDetail.email}}</label>
+      </div>
+      
+      <div>
+        <label class="checkout-user-label">Mobile Number:</label>
+        <label class="checkout-user-label ml10">{{userDetail.mobileNumber}}</label>
+      </div>
+      
+      <div>
+        <label class="checkout-user-label">Address:</label>
+        <label class="checkout-user-label ml10">{{userDetail.address}}</label>
+      </div> 
+      
+      <div>
+        <label class="checkout-user-label">Pin code:</label>
+        <label class="checkout-user-label ml10">{{userDetail.pincode}}</label>
+      </div>
+      
+      <div>
+        <label class="checkout-user-label">City:</label>
+        <label class="checkout-user-label ml10">{{userDetail.city}}</label>
+      </div>
+     
+      <div>
+        <label class="checkout-user-label">State:</label>
+        <label class="checkout-user-label ml10">{{userDetail.state}}</label>
+      </div> 
     </div>
-
+    
     <div class="checkout-cart-detail p15">
-      <h4 class="text-center">Cart Detail</h4>
+      <h4 class="text-center checkout-detail-title">Cart Detail</h4>
       <div class="cart text-center inline-block m20" *ngFor="let checkoutCarts of checkoutCart">
         <img [src]="checkoutCarts.image.src" alt="full-sleeve-red-men-jacket" class="cart-image">
         <h5 class="mtb5">{{checkoutCarts.name}}</h5>

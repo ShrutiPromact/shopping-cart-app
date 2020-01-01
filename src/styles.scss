@@ -16,6 +16,7 @@ $ruby-color: #e91e63;
 $gray-color: #808080;
 
 .salmon-pink-color{color: $salmon-pink-color;}
+.gray{color: $gray-color;}
 
 // Padding variable
 .p0{padding: 0;}
@@ -85,8 +86,12 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
 .card{border: none;}
 
 //checkout page
-.checkout-container{ background-color: $white-color;}
-.checkout-user-detail{ border: 1px solid $salmon-pink-color; border-radius: 25px; width: 1000px; margin: auto; 
-    .checkout-user-label{ color: $gray-color; font-size: $font-small;}
+.checkout-container{ background-color: $white-color;
+    .checkout-detail-title{color: $turquoise-color;}
 }
-.checkout-cart-detail{ width: 1000px; margin: 15px auto; border: 1px solid $salmon-pink-color; border-radius: 25px;}
+.checkout-user-detail{  
+    .checkout-user-label{ color: $gray-color; font-size: $font-small; width: 120px;}
+}
+.checkout-cart-detail{ width: 1000px; margin: 20px auto; border: 1px solid $salmon-pink-color; border-radius: 25px;
+    .cart{height: 275px;}
+}

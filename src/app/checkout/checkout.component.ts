@@ -11,16 +11,15 @@ export class CheckoutComponent implements OnInit {
   checkoutCart: cartModel[]=[];
   userDetail: UserModel;
   userString;
+  cartString
   constructor() { }
 
   ngOnInit() {
     this.userString = localStorage.getItem('userDetailKey');
     this.userDetail = JSON.parse(this.userString);
-    console.log(this.userDetail);
     
-    var cartString = localStorage.getItem('selectedCartItemKey');
-    this.checkoutCart = JSON.parse(cartString);
-    console.log(this.checkoutCart);
+    this.cartString = localStorage.getItem('selectedCartItemKey');
+    this.checkoutCart = JSON.parse(this.cartString);
   }
 
 }
