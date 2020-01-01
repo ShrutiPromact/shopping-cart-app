@@ -16,7 +16,7 @@ export class CartComponent implements OnInit {
   priceFilter = { 499: false, 999: false, 1499: false, 2000: false };
   itemCount = 0;
   selectedCartItemArray: cartModel[]=[];
-  searchFilterArray: cartModel[] = [];
+  searchFilterArray: cartModel[];
 
   constructor(public route: Router) { 
     this.cartDetail = [];
@@ -77,6 +77,7 @@ export class CartComponent implements OnInit {
    * Method for navigate to checkout page
    */
   navigateToCheckoutPage(){
+    localStorage.setItem('selectedCartItemKey', JSON.stringify(this.selectedCartItemArray));
     this.route.navigateByUrl('/checkout');
   }
 

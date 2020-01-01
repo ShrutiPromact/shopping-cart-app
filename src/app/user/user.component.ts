@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
   isEmailValid: boolean;
   isValidMobileNumber: boolean;
   isValidPincode: boolean;
-  userDetail: any;
+  userDetail: UserModel;
 
   constructor(public route: Router) { 
     this.userDetail = new UserModel();
@@ -36,14 +36,13 @@ export class UserComponent implements OnInit {
   saveUserInformation(){
     this.isUsername = this.userDetail.userName === null || this.userDetail.userName === '' || this.userDetail.userName === undefined ? true : false;
     this.isEmail = this.userDetail.email === null || this.userDetail.email === '' || this.userDetail.email === undefined ? true : false;
-    this.isMobileNumber = this.userDetail.mobileNumber === null || this.userDetail.mobileNumber === '' || this.userDetail.mobileNumber === undefined ? true : false;
+    this.isMobileNumber = this.userDetail.mobileNumber === null || this.userDetail.mobileNumber === 0 || this.userDetail.mobileNumber === undefined ? true : false;
     this.isAddress = this.userDetail.address === null || this.userDetail.address === '' || this.userDetail.address === undefined ? true : false;
-    this.isPincode = this.userDetail.pincode === null || this.userDetail.pincode === '' || this.userDetail.pincode === undefined ? true : false;
+    this.isPincode = this.userDetail.pincode === null || this.userDetail.pincode === 0 || this.userDetail.pincode === undefined ? true : false;
     this.isCity = this.userDetail.city === null || this.userDetail.city === '' || this.userDetail.city === undefined ? true : false;
 
     if(!this.isUsername && !this.isEmail && !this.isMobileNumber && !this.isAddress && !this.isPincode && !this.isCity){
-      localStorage.setItem('userDetailKey', this.userDetail);
-      console.log(this.userDetail);
+      localStorage.setItem('userDetailKey', JSON.stringify(this.userDetail));
       this.route.navigateByUrl('/cart');
     }
   }

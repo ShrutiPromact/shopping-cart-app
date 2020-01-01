@@ -13,6 +13,7 @@ $cyan-color: #ccffff;
 $cosmos-color: #ffcccc;
 $light-shade-blue: #edf8f8;
 $ruby-color: #e91e63;
+$gray-color: #808080;
 
 .salmon-pink-color{color: $salmon-pink-color;}
 
@@ -32,6 +33,7 @@ $ruby-color: #e91e63;
 .mtb20{margin: 20px 0;}
 .mtb5{margin: 5px 0;}
 .m20{margin: 20px;}
+.ml10{margin-left: 10px;}
 
 //Font variable
 .bold{font-weight: bold;}
@@ -67,7 +69,7 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
 .user-page{background: linear-gradient(to left, $cyan-color 0%, $cosmos-color 100%);}
 
 // Cart page
-.cart-page{background-color: $light-shade-blue;}
+.cart-page, .checkout-page{background-color: $light-shade-blue;}
 .cart-container{min-width: 1200px; max-width: 1465px; margin: auto; background-color: $white-color;}
 .filter-section, .cart-section{box-shadow: 0 1px 8px 0 rgba(0,0,0,.06); }
 .filter-header{font-size: $font-medium;}
@@ -81,3 +83,10 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
 .item-cart{ width: 30px; line-height: 30px; font-size: $font-xs; background-color: $ruby-color; border-radius: 50%; position: absolute; top: -6px; right: -13px; color: $white-color; }
 .fa-shopping-cart{color: $turquoise-color; font-size: $font-xl;}
 .card{border: none;}
+
+//checkout page
+.checkout-container{ background-color: $white-color;}
+.checkout-user-detail{ border: 1px solid $salmon-pink-color; border-radius: 25px; width: 1000px; margin: auto; 
+    .checkout-user-label{ color: $gray-color; font-size: $font-small;}
+}
+.checkout-cart-detail{ width: 1000px; margin: 15px auto; border: 1px solid $salmon-pink-color; border-radius: 25px;}
