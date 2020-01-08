@@ -25,6 +25,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cartDetail=data;
     this.duplicateCartDetail = this.cartDetail;
+    //this.itemCount = localStorage.getItem('selectedCartItemCount' );
   }
 
   /** 

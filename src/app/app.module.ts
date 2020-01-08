@@ -6,13 +6,15 @@ import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule, 

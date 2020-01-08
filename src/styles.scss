@@ -23,6 +23,7 @@ $gray-color: #808080;
 .p15{padding: 15px;}
 .p30{padding: 30px;}
 .pt55{padding-top: 55px;}
+.pb30{padding-bottom: 30px;}
 
 // Margin variable
 .mb0{margin-bottom: 0;}
@@ -59,6 +60,7 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
     &:hover{ color: $white-color;}
     &:focus{ box-shadow: none;}
 }
+.btn-delete{ background-color: $error-msg-color;}
 
 // Header
 .main-header{ background-color: $turquoise-color; color: $white-color; padding: 10px 60px; position: fixed; top: 0; z-index: 100;}
@@ -82,7 +84,7 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
     .cart-description, .cart-price{font-size: $font-small;}
 }
 .item-cart{ width: 30px; line-height: 30px; font-size: $font-xs; background-color: $ruby-color; border-radius: 50%; position: absolute; top: -6px; right: -13px; color: $white-color; }
-.fa-shopping-cart{color: $turquoise-color; font-size: $font-xl;}
+.fa-shopping-cart{color: $turquoise-color; font-size: $font-xl; cursor: pointer;}
 .card{border: none;}
 
 //checkout page
@@ -92,6 +94,4 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
 .checkout-user-detail{  
     .checkout-user-label{ color: $gray-color; font-size: $font-small; width: 120px;}
 }
-.checkout-cart-detail{ width: 1000px; margin: 20px auto; border: 1px solid $salmon-pink-color; border-radius: 25px;
-    .cart{height: 275px;}
-}
+.checkout-cart-detail{ width: 1000px; margin: 20px auto; border: 1px solid $salmon-pink-color; border-radius: 25px; }

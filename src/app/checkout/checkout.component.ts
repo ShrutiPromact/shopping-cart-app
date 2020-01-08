@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { cartModel } from '../cart/cart.model';
 import { UserModel } from '../user/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -12,7 +13,7 @@ export class CheckoutComponent implements OnInit {
   userDetail: UserModel;
   userString;
   cartString
-  constructor() { }
+  constructor(public route: Router) { }
 
   ngOnInit() {
     this.userString = localStorage.getItem('userDetailKey');
@@ -20,6 +21,20 @@ export class CheckoutComponent implements OnInit {
     
     this.cartString = localStorage.getItem('selectedCartItemKey');
     this.checkoutCart = JSON.parse(this.cartString);
+    console.log(this.checkoutCart);
   }
 
+  /**
+   * Method for navigate to payment page
+   */
+  navigateToPaymentPage(){
+    this.route.navigateByUrl('/payment');
+  }
+
+  /**
+   * Method for delete cart
+   */
+  deleteCart(detetCheckoutCart: cartModel){
+    this.checkoutCart.splice(this.checkoutCart.indexOf(detetCheckoutCart), 1);
+  }
 }

@@ -7,7 +7,7 @@
       </div>   
       <div class="col-sm-6 text-right">
         <i class="fa fa-shopping-cart" (click)="navigateToCheckoutPage()"></i>
-        <label class="text-center mb0 item-cart">{{itemCount}}</label>
+        <label class="text-center mb0 item-cart bold">{{itemCount}}</label>
       </div>    
     </div>
 
@@ -65,7 +65,7 @@
             <p class="cart-price text-left col-sm-6 mb0">Rs {{cartdetail.price}}</p>
             <p class="cart-description mb0 text-right col-sm-6">{{cartdetail.color}}</p>
           </div>       
-          <button type="button" class="btn w100 cart-btn" (click)="addCartItem(cartdetail)">Add to Cart</button>
+          <button type="button" class="btn w100 cart-btn pointer" (click)="addCartItem(cartdetail)">Add to Cart</button>
         </div>
       </div>
       <div *ngIf="cartDetail.length==0">
