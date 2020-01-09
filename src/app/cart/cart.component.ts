@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
   itemCount = 0;
   selectedCartItemArray: cartModel[]=[];
   searchFilterArray: cartModel[];
+  isCountAnimation: boolean;
 
   constructor(public route: Router) { 
     this.cartDetail = [];
@@ -25,7 +26,8 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cartDetail=data;
     this.duplicateCartDetail = this.cartDetail;
-    //this.itemCount = localStorage.getItem('selectedCartItemCount' );
+    this.selectedCartItemArray = JSON.parse(localStorage.getItem('selectedCartItemKey'));
+    this.itemCount = parseInt(localStorage.getItem('selectedCartItemCount'));
   }
 
   /** 
@@ -72,6 +74,7 @@ export class CartComponent implements OnInit {
   addCartItem(itemDetail: cartModel){
     this.selectedCartItemArray.push(itemDetail);
     this.itemCount = this.selectedCartItemArray.length;
+    this.isCountAnimation = true;
   }
 
   /** 
@@ -79,6 +82,7 @@ export class CartComponent implements OnInit {
    */
   navigateToCheckoutPage(){
     localStorage.setItem('selectedCartItemKey', JSON.stringify(this.selectedCartItemArray));
+    localStorage.setItem('selectedCartItemCount',  this.itemCount.toString());
     this.route.navigateByUrl('/checkout');
   }
 
@@ -86,18 +90,15 @@ export class CartComponent implements OnInit {
    * Method for search product
    */
   filterByLetter(cartName: any){
-    //var filter = cartName.toUpperCase();
-    // for(var x=0; x <= this.cartDetail.length;){
-    //   if(this.cartDetail[x].name.startsWith(cartName.target.value)){
-    //     this.searchFilterArray.push(this.cartDetail[x]);
-    //     x++;
-    //   }
-    //   else{
-    //     x++;
-    //   }
-    // }
     this.cartDetail = this.duplicateCartDetail;
     this.searchFilterArray=this.cartDetail.filter(x=>x.name.toLowerCase().includes(cartName.target.value.toLowerCase()));
     this.cartDetail = this.searchFilterArray;
+  }
+
+  /** 
+   * Method for common filter functionality
+   */
+  filterProducts(){
+    
   }
 }

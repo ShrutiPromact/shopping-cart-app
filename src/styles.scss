@@ -36,6 +36,7 @@ $gray-color: #808080;
 .mtb5{margin: 5px 0;}
 .m20{margin: 20px;}
 .ml10{margin-left: 10px;}
+.mr10{margin-right: 10px;}
 
 //Font variable
 .bold{font-weight: bold;}
@@ -83,9 +84,10 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
     .cart-btn{position: absolute; bottom: 0; left: 0; right: 0;}
     .cart-description, .cart-price{font-size: $font-small;}
 }
-.item-cart{ width: 30px; line-height: 30px; font-size: $font-xs; background-color: $ruby-color; border-radius: 50%; position: absolute; top: -6px; right: -13px; color: $white-color; }
+.item-cart{ width: 30px; line-height: 30px; font-size: $font-xs; background-color: $ruby-color; border-radius: 50%; position: absolute; top: -4px; right: -1px; color: $white-color; }
 .fa-shopping-cart{color: $turquoise-color; font-size: $font-xl; cursor: pointer;}
 .card{border: none;}
+.searchbar-header{ position: sticky; top: 53px;background-color: #cae8ca;z-index: 100; }
 
 //checkout page
 .checkout-container{ background-color: $white-color;
@@ -95,3 +97,21 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
     .checkout-user-label{ color: $gray-color; font-size: $font-small; width: 120px;}
 }
 .checkout-cart-detail{ width: 1000px; margin: 20px auto; border: 1px solid $salmon-pink-color; border-radius: 25px; }
+
+/* Ripple effect */
+.ripple {
+    background-position: center;
+    transition: 0.8s;
+
+    &:hover{
+        background: $turquoise-color radial-gradient(circle, transparent 1%, $turquoise-color 1%) center/15000%;
+    }
+
+    &:active{
+        background-color: pink;
+        background-size: 100%;
+        transition: 0s;
+    }
+  }
+
+  

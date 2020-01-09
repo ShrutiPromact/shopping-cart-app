@@ -12,7 +12,7 @@ export class CheckoutComponent implements OnInit {
   checkoutCart: cartModel[]=[];
   userDetail: UserModel;
   userString;
-  cartString
+  cartString;
   constructor(public route: Router) { }
 
   ngOnInit() {
@@ -36,5 +36,7 @@ export class CheckoutComponent implements OnInit {
    */
   deleteCart(detetCheckoutCart: cartModel){
     this.checkoutCart.splice(this.checkoutCart.indexOf(detetCheckoutCart), 1);
+    localStorage.setItem('selectedCartItemKey', JSON.stringify(this.checkoutCart));
+    localStorage.setItem('selectedCartItemCount',  this.checkoutCart.length.toString());
   }
 }
