@@ -21,7 +21,6 @@ export class CheckoutComponent implements OnInit {
     
     this.cartString = localStorage.getItem('selectedCartItemKey');
     this.checkoutCart = JSON.parse(this.cartString);
-    console.log(this.checkoutCart);
   }
 
   /**

@@ -22,7 +22,7 @@ $gray-color: #808080;
 .p0{padding: 0;}
 .p15{padding: 15px;}
 .p30{padding: 30px;}
-.pt55{padding-top: 55px;}
+.pt53{padding-top: 53px;}
 .pb30{padding-bottom: 30px;}
 
 // Margin variable
@@ -92,6 +92,7 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
 //checkout page
 .checkout-container{ background-color: $white-color;
     .checkout-detail-title{color: $turquoise-color;}
+    .payment-btn{ background-color: $turquoise-color; width: 200px; padding: 15px;}
 }
 .checkout-user-detail{  
     .checkout-user-label{ color: $gray-color; font-size: $font-small; width: 120px;}
@@ -100,18 +101,9 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
 
 /* Ripple effect */
 .ripple {
-    background-position: center;
-    transition: 0.8s;
-
-    &:hover{
-        background: $turquoise-color radial-gradient(circle, transparent 1%, $turquoise-color 1%) center/15000%;
-    }
-
-    &:active{
-        background-color: pink;
-        background-size: 100%;
-        transition: 0s;
-    }
-  }
+    background-position: center; transition: 0.8s;
+    &:hover{ background: $turquoise-color radial-gradient(circle, transparent 1%, $turquoise-color 1%) center/15000%; }
+    &:active{ background-color: pink; background-size: 100%; transition: 0s; }
+}
 
   

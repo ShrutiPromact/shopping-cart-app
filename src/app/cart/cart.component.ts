@@ -18,6 +18,9 @@ export class CartComponent implements OnInit {
   selectedCartItemArray: cartModel[]=[];
   searchFilterArray: cartModel[];
   isCountAnimation: boolean;
+  categoryFilter: string;
+  priceFilterString: string;
+
 
   constructor(public route: Router) { 
     this.cartDetail = [];
@@ -26,46 +29,8 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cartDetail=data;
     this.duplicateCartDetail = this.cartDetail;
-    this.selectedCartItemArray = JSON.parse(localStorage.getItem('selectedCartItemKey'));
-    this.itemCount = parseInt(localStorage.getItem('selectedCartItemCount'));
-  }
-
-  /** 
-   * Method for select category
-   */
-  filterCategory(category: string){
-    this.cartDetail = this.duplicateCartDetail;
-    this.cartDetail = this.cartDetail.filter(x => x.category === category); 
-  }
-  
-  /** 
-   * Method for select Price
-   */
-  selectPrice(price: number){
-    this.cartDetail = this.duplicateCartDetail;
-
-      if(price <= 499){
-        this.cartDetail = this.cartDetail.filter(x => x.price <= price); 
-      }     
-      else if( price <= 999){
-        this.cartDetail = this.cartDetail.filter(x => x.price <= price); 
-      }
-      else if(price <= 1499){
-        this.cartDetail = this.cartDetail.filter(x => x.price <= price); 
-      }
-      else if(price <= 2000){
-        this.cartDetail;
-      }
-  }
-
-  /** 
-   * Method for select Color
-   */
-  selectColor(){
-    this.cartDetail = this.duplicateCartDetail;
-    if(this.colorFilter.Red||this.colorFilter.Blue){
-      this.cartDetail = this.cartDetail.filter(x => (x.color === 'Red' && this.colorFilter.Red) || (x.color === 'Blue' && this.colorFilter.Blue));
-    }    
+    //this.selectedCartItemArray = JSON.parse(localStorage.getItem('selectedCartItemKey'));
+    //this.itemCount = parseInt(localStorage.getItem('selectedCartItemCount'));
   }
 
   /** 
@@ -99,6 +64,21 @@ export class CartComponent implements OnInit {
    * Method for common filter functionality
    */
   filterProducts(){
+    this.cartDetail = this.duplicateCartDetail;
+
+    if(this.categoryFilter==='men'||this.categoryFilter==='women'||this.categoryFilter==='kid'){
+      this.cartDetail=this.cartDetail.filter(x=>(x.category==='men' && this.categoryFilter==='men')
+      ||(x.category==='women' && this.categoryFilter==='women')
+      ||(x.category==='kid' && this.categoryFilter==='kid'));
+    }  
     
+    if(this.priceFilterString ==='499'|| this.priceFilterString ==='999'|| this.priceFilterString ==='1499'|| this.priceFilterString ==='2000'){
+      this.cartDetail = this.cartDetail.filter(x => (x.price <= 499 && this.priceFilterString==='499') || (x.price <= 999 && this.priceFilterString==='999')
+      ||(x.price <= 1499 && this.priceFilterString==='1499')|| (x.price <= 2000 && this.priceFilterString==='2000'));
+    }
+
+    if(this.colorFilter.Red||this.colorFilter.Blue){
+      this.cartDetail = this.cartDetail.filter(x => (x.color === 'Red' && this.colorFilter.Red) || (x.color === 'Blue' && this.colorFilter.Blue));
+    }
   }
 }

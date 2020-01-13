@@ -1,5 +1,5 @@
 <!-- Cart Page -->
-<div class="cart-page pt55">
+<div class="cart-page pt53">
   <div class="cart-container">
     <div class="row ml0 mr0 p15 searchbar-header">
       <div class="col-sm-6">
@@ -20,9 +20,12 @@
             <p class="filter-section-title mb0">CATEGORIES</p>
             <div id="collapseOne" class="collapse show">
               <div class="card-body p15">
-                <p class="card-body-submenu mb10 pointer" (click)="filterCategory('men')">Men's Clothing</p>
+                <!-- <p class="card-body-submenu mb10 pointer" (click)="filterCategory('men')">Men's Clothing</p>
                 <p class="card-body-submenu mb10 pointer" (click)="filterCategory('women')">Women's Clothing</p>
-                <p class="card-body-submenu mb10 pointer" (click)="filterCategory('kid')">Kid's Clothing</p>
+                <p class="card-body-submenu mb10 pointer" (click)="filterCategory('kid')">Kid's Clothing</p> -->
+                <input type="radio" name="category" class="mb10 pointer" value="men" (change)="filterProducts()" [(ngModel)]="categoryFilter"><span class="card-body-submenu"> Men's Clothing</span><br>
+                <input type="radio" name="category" class="mb10 pointer" value="women" (change)="filterProducts()" [(ngModel)]="categoryFilter"><span class="card-body-submenu"> Women's Clothing</span><br>
+                <input type="radio" name="category" class="mb10 pointer" value="kid" (change)="filterProducts()" [(ngModel)]="categoryFilter"><span class="card-body-submenu"> Kid's Clothing</span><br>
               </div>
             </div>
           </section>
@@ -32,10 +35,10 @@
             <p class="filter-section-title mb0">PRICE</p>
             <div id="collapseTwo" class="collapse show">
               <div class="card-body p15">
-                <input type="radio" name="price" class="mb10 pointer" (change)="selectPrice(499)"><span class="card-body-submenu"> Rs. 499 and below</span><br>
-                <input type="radio" name="price" class="mb10 pointer" (change)="selectPrice(999)"><span class="card-body-submenu"> Rs. 999 and below</span><br>
-                <input type="radio" name="price" class="mb10 pointer" (change)="selectPrice(1499)"><span class="card-body-submenu"> Rs. 1499 and below</span><br>
-                <input type="radio" name="price" class="mb10 pointer" (change)="selectPrice(2000)"><span class="card-body-submenu"> Rs. 2000 and below</span>
+                <input type="radio" name="price" class="mb10 pointer" value="499" (change)="filterProducts()" [(ngModel)]="priceFilterString"><span class="card-body-submenu"> Rs. 499 and below</span><br>
+                <input type="radio" name="price" class="mb10 pointer" value="999" (change)="filterProducts()" [(ngModel)]="priceFilterString"><span class="card-body-submenu"> Rs. 999 and below</span><br>
+                <input type="radio" name="price" class="mb10 pointer" value="1499" (change)="filterProducts()" [(ngModel)]="priceFilterString"><span class="card-body-submenu"> Rs. 1499 and below</span><br>
+                <input type="radio" name="price" class="mb10 pointer" value="2000" (change)="filterProducts()" [(ngModel)]="priceFilterString"><span class="card-body-submenu"> Rs. 2000 and below</span>
               </div>
             </div>
           </section>
@@ -44,8 +47,8 @@
             <p class="filter-section-title mb0">COLOR</p>
             <div id="collapseThree" class="collapse show">
               <div class="card-body p15">
-                <input type="checkbox" name="color1" value="Red" class="mb10 pointer" [(ngModel)]="colorFilter.Red" (change)="selectColor()"><span class="card-body-submenu"> Red</span><br>
-                <input type="checkbox" name="color2" value="Blue" class="mb10 pointer" [(ngModel)]="colorFilter.Blue" (change)="selectColor()"><span class="card-body-submenu"> Blue</span>
+                <input type="checkbox" name="color1" value="Red" class="mb10 pointer" [(ngModel)]="colorFilter.Red" (change)="filterProducts()"><span class="card-body-submenu"> Red</span><br>
+                <input type="checkbox" name="color2" value="Blue" class="mb10 pointer" [(ngModel)]="colorFilter.Blue" (change)="filterProducts()"><span class="card-body-submenu"> Blue</span>
               </div>
             </div>
           </section>   
