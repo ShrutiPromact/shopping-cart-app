@@ -6,7 +6,7 @@
         <input type="text" placeholder="Search by product name" class="form-control" (keyup)="filterByLetter($event)">
       </div>   
       <div class="col-sm-6 text-right">
-        <i class="fa fa-shopping-cart mr10" (click)="navigateToCheckoutPage()"></i>
+        <i (click)="navigateToCheckoutPage()" [ngClass]="isExample ? 'fa fa-shopping-cart mr10 pointer-event' : 'fa fa-shopping-cart mr10'"></i>
         <label class="text-center mb0 item-cart bold">{{itemCount}}</label>
       </div>    
     </div>
@@ -14,22 +14,24 @@
     <div class="row ml0 mr0">
       <!-- Filter Section -->
       <div class="col-sm-2 filter-section p0">
-        <p class="p15 border-bottom-color filter-header mb0">FILTERS</p>
+        <div class="row mr0 ml0 border-bottom-color">
+          <p class="p15 filter-header mb0 col-sm-6">FILTERS</p>
+          <div class="col-sm-6 text-right p15">
+            <button type="button" class="clear-btn" (click)="clearAllFilter()">Clear</button>
+          </div>          
+        </div>
+       
         <div class="p15 card">
           <section>
             <p class="filter-section-title mb0">CATEGORIES</p>
             <div id="collapseOne" class="collapse show">
               <div class="card-body p15">
-                <!-- <p class="card-body-submenu mb10 pointer" (click)="filterCategory('men')">Men's Clothing</p>
-                <p class="card-body-submenu mb10 pointer" (click)="filterCategory('women')">Women's Clothing</p>
-                <p class="card-body-submenu mb10 pointer" (click)="filterCategory('kid')">Kid's Clothing</p> -->
                 <input type="radio" name="category" class="mb10 pointer" value="men" (change)="filterProducts()" [(ngModel)]="categoryFilter"><span class="card-body-submenu"> Men's Clothing</span><br>
                 <input type="radio" name="category" class="mb10 pointer" value="women" (change)="filterProducts()" [(ngModel)]="categoryFilter"><span class="card-body-submenu"> Women's Clothing</span><br>
                 <input type="radio" name="category" class="mb10 pointer" value="kid" (change)="filterProducts()" [(ngModel)]="categoryFilter"><span class="card-body-submenu"> Kid's Clothing</span><br>
               </div>
             </div>
-          </section>
-         
+          </section>        
 
           <section>
             <p class="filter-section-title mb0">PRICE</p>
@@ -67,7 +69,7 @@
           <button type="button" class="btn w100 cart-btn pointer ripple" (click)="addCartItem(cartdetail)">Add to Cart</button>
         </div>
       </div>
-      <div *ngIf="cartDetail.length==0">
+      <div *ngIf="cartDetail.length==0" class="col-sm-10">
         <p>There is no item to display</p>
       </div>
     </div>

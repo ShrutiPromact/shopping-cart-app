@@ -55,6 +55,7 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
 .error-msg { color: $error-msg-color; font-size: $font-xs; }
 .border-bottom-color{border-bottom: 1px solid #f0f0f0;}
 .pointer{cursor: pointer;}
+.pointer-event{ pointer-events: none;}
 
 /***button***/
 .btn { padding: 6px 12px; line-height: 20px; background-color: $salmon-pink-color; color: $white-color; border: none; border-radius: 3px; outline: none; 
@@ -62,6 +63,11 @@ body, html{ height: $full-height; font-family: 'Roboto', sans-serif; background-
     &:focus{ box-shadow: none;}
 }
 .btn-delete{ background-color: $error-msg-color;}
+.clear-btn{ color: $salmon-pink-color; background: none; border: 0; line-height: 27px; outline: none;}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 // Header
 .main-header{ background-color: $turquoise-color; color: $white-color; padding: 10px 60px; position: fixed; top: 0; z-index: 100;}

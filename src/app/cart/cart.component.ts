@@ -20,10 +20,10 @@ export class CartComponent implements OnInit {
   isCountAnimation: boolean;
   categoryFilter: string;
   priceFilterString: string;
-
+  isExample: boolean;
 
   constructor(public route: Router) { 
-    this.cartDetail = [];
+    this.cartDetail = [];    
   }
 
   ngOnInit() {
@@ -31,6 +31,11 @@ export class CartComponent implements OnInit {
     this.duplicateCartDetail = this.cartDetail;
     this.selectedCartItemArray = JSON.parse(localStorage.getItem('selectedCartItemKey'));
     this.itemCount = parseInt(localStorage.getItem('selectedCartItemCount'));
+    if(this.itemCount===0){
+      this.isExample = true;
+    }else{
+      this.isExample=false;
+    }
   }
 
   /** 
@@ -40,6 +45,7 @@ export class CartComponent implements OnInit {
     this.selectedCartItemArray.push(itemDetail);
     this.itemCount = this.selectedCartItemArray.length;
     this.isCountAnimation = true;
+    this.isExample=false;
   }
 
   /** 
@@ -80,5 +86,15 @@ export class CartComponent implements OnInit {
     if(this.colorFilter.Red||this.colorFilter.Blue){
       this.cartDetail = this.cartDetail.filter(x => (x.color === 'Red' && this.colorFilter.Red) || (x.color === 'Blue' && this.colorFilter.Blue));
     }
+  }
+
+  /** 
+   * Method for clearing all filter 
+   */
+  clearAllFilter(){
+    this.cartDetail = this.duplicateCartDetail;
+    this.colorFilter = { Red: false, Blue: false };
+    this.priceFilterString = "";
+    this.categoryFilter = "";
   }
 }
