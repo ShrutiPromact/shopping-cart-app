@@ -44,6 +44,8 @@ export class UserComponent implements OnInit {
     if(!this.isUsername && !this.isEmail && !this.isMobileNumber && !this.isAddress && !this.isPincode && !this.isCity){
       if(this.isEmailValid && this.isValidMobileNumber && this.isValidPincode){
         localStorage.setItem('userDetailKey', JSON.stringify(this.userDetail));
+        localStorage.setItem('selectedCartItemCount','0');
+        localStorage.setItem('selectedCartItemKey', JSON.stringify([]));
         this.route.navigateByUrl('/cart');
       }
     }
@@ -69,13 +71,12 @@ export class UserComponent implements OnInit {
    * @param pincode contains the pincode entered by the user
    */
   onPinCodeValid(pincode: string){
+    this.isValidPincode = false;
     if(pincode != ''){
       this.isPincode = false;
-      if(!pincode.match(/^\d{6,}$/)){
-        this.isValidPincode = false;
+      if(pincode.match(/^\d{6,}$/)){
+        this.isValidPincode = true;
       }
-      else
-      this.isValidPincode = true;
     }
   }
 
@@ -84,13 +85,12 @@ export class UserComponent implements OnInit {
    * @param mobileNumber contains the mobile number entered by the user
    */
   onMobileNumberValid(mobileNumber: string){
+    this.isValidMobileNumber = false;
     if(mobileNumber != ''){
       this.isMobileNumber = false;
-      if(!mobileNumber.match(/^[6-9]\d{9}$/)){
-        this.isValidMobileNumber = false;
+      if(mobileNumber.match(/^[6-9]\d{9}$/)){
+        this.isValidMobileNumber = true;
       }
-      else
-      this.isValidMobileNumber = true;
     }
   }
 

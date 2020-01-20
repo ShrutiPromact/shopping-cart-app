@@ -6,7 +6,7 @@
         <input type="text" placeholder="Search by product name" class="form-control" (keyup)="filterByLetter($event)">
       </div>   
       <div class="col-sm-6 text-right">
-        <i (click)="navigateToCheckoutPage()" [ngClass]="isExample ? 'fa fa-shopping-cart mr10 pointer-event' : 'fa fa-shopping-cart mr10'"></i>
+        <i (click)="navigateToCheckoutPage()" [ngClass]="isExample ? 'fa fa-shopping-cart mr10 pointer-event' : 'fa fa-shopping-cart mr10 pointer'"></i>
         <label class="text-center mb0 item-cart bold">{{itemCount}}</label>
       </div>    
     </div>

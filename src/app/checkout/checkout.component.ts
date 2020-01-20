@@ -27,6 +27,8 @@ export class CheckoutComponent implements OnInit {
    * Method for navigate to payment page
    */
   navigateToPaymentPage(){
+    localStorage.setItem('selectedCartItemCount','0');
+        localStorage.setItem('selectedCartItemKey', JSON.stringify([]));
     this.route.navigateByUrl('/payment');
   }
 
