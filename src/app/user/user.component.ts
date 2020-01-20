@@ -42,8 +42,10 @@ export class UserComponent implements OnInit {
     this.isCity = this.userDetail.city === null || this.userDetail.city === '' || this.userDetail.city === undefined ? true : false;
 
     if(!this.isUsername && !this.isEmail && !this.isMobileNumber && !this.isAddress && !this.isPincode && !this.isCity){
-      localStorage.setItem('userDetailKey', JSON.stringify(this.userDetail));
-      this.route.navigateByUrl('/cart');
+      if(this.isEmailValid && this.isValidMobileNumber && this.isValidPincode){
+        localStorage.setItem('userDetailKey', JSON.stringify(this.userDetail));
+        this.route.navigateByUrl('/cart');
+      }
     }
   }
 
