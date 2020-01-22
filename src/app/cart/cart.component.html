@@ -3,7 +3,7 @@
   <div class="cart-container">
     <div class="row ml0 mr0 p15 searchbar-header">
       <div class="col-sm-6">
-        <input type="text" placeholder="Search by product name" class="form-control" (keyup)="filterByLetter($event)">
+        <input type="text" placeholder="Search by product name" class="form-control" (keyup)="filterProducts()" [(ngModel)]="cartName">
       </div>   
       <div class="col-sm-6 text-right">
         <i (click)="navigateToCheckoutPage()" [ngClass]="isExample ? 'fa fa-shopping-cart mr10 pointer-event' : 'fa fa-shopping-cart mr10 pointer'"></i>
@@ -70,7 +70,7 @@
         </div>
       </div>
       <div *ngIf="cartDetail.length==0" class="col-sm-10">
-        <p>There is no item to display</p>
+        <h1 class="no-item-text">There are no item to display</h1>
       </div>
     </div>
   </div>

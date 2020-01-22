@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
   categoryFilter: string;
   priceFilterString: string;
   isExample: boolean;
+  cartName: string;
 
   constructor(public route: Router) { 
     this.cartDetail = [];    
@@ -86,15 +87,27 @@ export class CartComponent implements OnInit {
     if(this.colorFilter.Red||this.colorFilter.Blue){
       this.cartDetail = this.cartDetail.filter(x => (x.color === 'Red' && this.colorFilter.Red) || (x.color === 'Blue' && this.colorFilter.Blue));
     }
+
+    if(this.cartName!=="" && this.cartName!==null&&this.cartName!==undefined){
+      this.cartDetail = this.cartDetail.filter(x=>x.name.toLowerCase().includes(this.cartName.toLowerCase()));
+    }
   }
 
   /** 
    * Method for clearing all filter 
    */
   clearAllFilter(){
-    this.cartDetail = this.duplicateCartDetail;
-    this.colorFilter = { Red: false, Blue: false };
-    this.priceFilterString = "";
-    this.categoryFilter = "";
+    if(this.cartName ===""){
+      this.cartDetail = this.duplicateCartDetail;
+      this.colorFilter = { Red: false, Blue: false };
+      this.priceFilterString = "";
+      this.categoryFilter = "";
+    } 
+    else{
+      this.cartDetail = this.duplicateCartDetail.filter(x=>x.name.toLowerCase().includes(this.cartName.toLowerCase()));
+      this.colorFilter = { Red: false, Blue: false };
+      this.priceFilterString = "";
+      this.categoryFilter = "";
+    } 
   }
 }

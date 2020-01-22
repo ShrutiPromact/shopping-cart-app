@@ -51,6 +51,7 @@
         </div> 
         <button class="btn btn-delete" type="button" (click)="deleteCart(checkoutCarts)"><i class="fa fa-trash" aria-hidden="true"></i></button>      
       </div>
+      <p *ngIf="isNoteMessage" class="text-center item-error-msg m20">There are no item in cart so payment will not done.</p>
     </div>
 
     <div class="text-center pb30">

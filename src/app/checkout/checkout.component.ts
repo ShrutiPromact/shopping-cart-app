@@ -13,6 +13,8 @@ export class CheckoutComponent implements OnInit {
   userDetail: UserModel;
   userString;
   cartString;
+  isNoteMessage: boolean;
+  itemNumber: number;
   constructor(public route: Router) { }
 
   ngOnInit() {
@@ -27,9 +29,16 @@ export class CheckoutComponent implements OnInit {
    * Method for navigate to payment page
    */
   navigateToPaymentPage(){
-    localStorage.setItem('selectedCartItemCount','0');
+    var itemCount = localStorage.getItem('selectedCartItemCount');
+    this.itemNumber =  parseInt(itemCount);
+     if(this.itemNumber > 0){
+        localStorage.setItem('selectedCartItemCount','0');
         localStorage.setItem('selectedCartItemKey', JSON.stringify([]));
-    this.route.navigateByUrl('/payment');
+        this.route.navigateByUrl('/payment');
+      }
+      else{
+        this.isNoteMessage = true;
+      }
   }
 
   /**
